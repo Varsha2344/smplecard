@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Card</title>
+    <style>
+        .pricing-card {
+            max-width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .pricing-card.active {
+            border-color: #4CAF50;
+        }
+
+        .pricing-card h2 {
+            font-size: 30px;
+            color: #333;
+        }
+
+        .price {
+            font-size: 50px;
+            color: #4CAF50;
+        }
+
+        .features {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+        }
+
+        .select-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-card" id="basic">
+        <h2>Basic</h2>
+        <div class="price">$10/month</div>
+        <ul class="features">
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+            <li>Feature 3</li>
+        </ul>
+        <button class="select-button" onclick="selectPlan('basic')">Select Plan</button>
+    </div>
+
+    <div class="pricing-card" id="pro">
+        <h2>Pro</h2>
+        <div class="price">$20/month</div>
+        <ul class="features">
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+            <li>Feature 3</li>
+        </ul>
+        <button class="select-button" onclick="selectPlan('pro')">Select Plan</button>
+    </div>
+
+    <div class="pricing-card" id="premium">
+        <h2>Premium</h2>
+        <div class="price">$30/month</div>
+        <ul class="features">
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+            <li>Feature 3</li>
+        </ul>
+        <button class="select-button" onclick="selectPlan('premium')">Select Plan</button>
+    </div>
+
+    <script>
+        function selectPlan(planId) {
+            var cards = document.querySelectorAll('.pricing-card');
+
+            cards.forEach(function(card) {
+                card.classList.remove('active');
+            });
+
+            var selectedCard = document.getElementById(planId);
+            selectedCard.classList.add('active');
+        }
+    </script>
+</body>
+</html>
